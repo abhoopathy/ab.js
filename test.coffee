@@ -34,10 +34,28 @@ _try = (arr) ->
             #share: (100/3)
         #}
     #]
-
 ab.register = (obj) -> console.log obj
+console.log ab.set [
+        {
+            value: 'white'
+            share: (100/3)
+            register: 'w'
+        },
+        {
+            value: 'green'
+            share: (100/3)
+            register: 'g'
+        },
+        {
+            value: 'black'
+            share: (100/3)
+        }
+    ], 'reg'
 
-ab.set [
+ab.getProp = (property) -> 'w'
+
+
+console.log ab.set [
         {
             value: 'white'
             share: (100/3)
