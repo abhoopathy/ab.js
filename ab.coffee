@@ -5,6 +5,8 @@ root = this;
 
 ab = {}
 
+ab.getProp = (property) -> false
+
 # [
 #   {
 #       share: 50
@@ -12,6 +14,8 @@ ab = {}
 #   }
 # ]
 ab.set = (options, registerKey) ->
+    if (_ref = getProp(registerKey))
+        return _ref
 
     # Random num between 1 and 100
     rand = Math.floor((Math.random()*100)+1)
