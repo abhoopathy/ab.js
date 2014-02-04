@@ -14,7 +14,7 @@ ab.getProp = (property) -> false
 #   }
 # ]
 ab.set = (options, registerKey) ->
-    if (_ref = getProp(registerKey))
+    if (_ref = ab.getProp(registerKey))
         return _ref
 
     # Random num between 1 and 100

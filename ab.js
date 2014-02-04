@@ -12,7 +12,7 @@
 
   ab.set = function(options, registerKey) {
     var opt, rand, sum, _i, _len, _ref;
-    if ((_ref = getProp(registerKey))) {
+    if ((_ref = ab.getProp(registerKey))) {
       return _ref;
     }
     rand = Math.floor((Math.random() * 100) + 1);
