@@ -6,7 +6,13 @@ root = this;
 
 ab = {}
 
-
+# [
+#   {
+#       share: 50
+#       value: 50
+#       label: 50
+#   }
+# ]
 ab.set = (options) ->
 
     # Random num between 1 and 100
@@ -16,7 +22,7 @@ ab.set = (options) ->
     for opt in options
         sum = sum + opt.share
         if rand <= sum
-            return opt.value
+            return opt
 
 
 if ( typeof define == "function" && define.amd )
