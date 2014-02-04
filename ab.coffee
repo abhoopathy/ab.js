@@ -11,7 +11,7 @@ ab = {}
 #       value: 50
 #   }
 # ]
-ab.set = (options) ->
+ab.set = (options, registerKey) ->
 
     # Random num between 1 and 100
     rand = Math.floor((Math.random()*100)+1)
@@ -20,26 +20,15 @@ ab.set = (options) ->
     for opt in options
         sum = sum + opt.share
         if rand <= sum
-            _register opt if opt.register?
+            _register(opt, registerKey) if registerKey?
             return opt.value
 
 
-_register = (opt) ->
-    registerProperty = opt.register
-
-    if ab.register?
-
-        regObj = {}
-
-        #if isString
-        if (typeof registerProperty == 'string')
-            regObj[registerProperty] = opt.value
-
-        #if isObject
-        else if (registerProperty == Object(registerProperty))
-            regObj = registerProperty
-
-        ab.register(regObj)
+_register = (opt, key) ->
+    return if !ab.register?
+    regObj = {}
+    regObj[key] = ( opt.register ? opt.value )
+    ab.register(regObj)
 
 
 if ( typeof define == "function" && define.amd )

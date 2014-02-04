@@ -9,7 +9,7 @@ _round = (n) ->
 trials = 10000000
 _try = (arr) ->
     raw = _.map [1..trials], ->
-        ab.set(arr).value
+        ab.set(arr)
 
     return _.map(
         _.countBy(raw, _.identity),
@@ -41,17 +41,15 @@ ab.set [
         {
             value: 'white'
             share: (100/3)
-            register:
-                'color' : 'a'
+            register: 'w'
         },
         {
             value: 'green'
             share: (100/3)
-            register: 'color'
+            register: 'g'
         },
         {
             value: 'black'
             share: (100/3)
-            register: 'color'
         }
-    ]
+    ], 'reg'
