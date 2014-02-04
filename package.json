@@ -1,0 +1,22 @@
+{
+  "name": "ab.js",
+  "version": "0.0.1",
+  "description": "Ab Testing Module",
+  "main": "ab.js",
+  "dependencies": {
+    "underscore": "~1.5.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "coffee test.coffee"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/abhoopathy/ab.js.git"
+  },
+  "author": "Aneesh Bhoopathy",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/abhoopathy/ab.js/issues"
+  }
+}
