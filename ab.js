@@ -6,8 +6,15 @@
 
   ab = {};
 
+  ab.getProp = function(property) {
+    return false;
+  };
+
   ab.set = function(options, registerKey) {
-    var opt, rand, sum, _i, _len;
+    var opt, rand, sum, _i, _len, _ref;
+    if ((_ref = getProp(registerKey))) {
+      return _ref;
+    }
     rand = Math.floor((Math.random() * 100) + 1);
     sum = 0;
     for (_i = 0, _len = options.length; _i < _len; _i++) {
